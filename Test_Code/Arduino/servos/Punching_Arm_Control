@@ -1,0 +1,45 @@
+#include <Servo.h> 
+
+Servo myservo;  // create servo object to control a servo 
+// a maximum of eight servo objects can be created 
+
+int pos = 0;    // variable to store the servo position 
+
+int delayTime=5;
+
+void setup() 
+{ 
+  Serial.begin(9600);
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+  myservo.write(5);
+} 
+
+void extend(){
+  myservo.write(44);
+  delay(delayTime);
+}
+
+void retract(){
+  myservo.write(5);
+  delay(10);
+}
+
+void loop() { 
+  if (Serial.available() > 0) {
+    int arm = Serial.read();
+    if (arm=='a') {
+      extend();
+    }
+    if (arm=='b') {
+      retract();
+    }
+
+  }
+}
+
+/*myservo.write(0);
+ delay(5);
+ myservo.write(37);
+ delay(5);*/
+
+
