@@ -1,5 +1,6 @@
 TwitchPlaysRockEmSockEm
 =======================
+Members: Brian Chuk, Jason Han, Victoria Chung, Yaseen Islam
 
 The title says it all.
 
