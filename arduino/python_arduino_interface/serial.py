@@ -1,5 +1,4 @@
-eyyy
+import serial
 
-http://pyserial.sourceforge.net/shortintro.html
+s=serial.Serial(0)
 
-http://playground.arduino.cc/interfacing/python
