@@ -20,3 +20,7 @@ Get motors working with arduino.<br>
 Figure out how the chat works.<br>
 Read different commands through serial.<br>
 Learn how to send serial to the robot through the interwebs.<br>
+
+
+To look at later:
+http://pyserial.sourceforge.net/shortintro.html
