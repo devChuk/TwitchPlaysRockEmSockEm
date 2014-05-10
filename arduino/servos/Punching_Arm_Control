@@ -1,39 +1,71 @@
-#include <Servo.h> 
+#include <Servo.h>
 
-Servo myservo;  // create servo object to control a servo 
-// a maximum of eight servo objects can be created 
+Servo myservo1;
+Servo myservo2;// create servo object to control a servo
+// a maximum of eight servo objects can be created
 
-int pos = 0;    // variable to store the servo position 
+int pos = 0; // variable to store the servo position
 
 int delayTime=5;
 
-void setup() 
-{ 
+void setup()
+{
   Serial.begin(9600);
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
-  myservo.write(5);
-} 
+  myservo1.attach(9); // attaches the servo on pin 9 to the servo object
+  myservo1.write(5);
+  myservo2.attach(10);
+  myservo2.write(82);
+  
+}
 
-void extend(){
-  myservo.write(44);
+void extend1(){
+  myservo1.write(50);
   delay(delayTime);
 }
 
-void retract(){
-  myservo.write(5);
-  delay(10);
+void retract1(){
+  myservo1.write(5);
+  delay(delayTime);
 }
 
-void loop() { 
+void extend2(){
+  myservo2.write(49);
+  delay(delayTime);
+}
+
+void retract2(){
+  myservo2.write(82);
+  delay(delayTime);
+  
+}
+
+void punchleft(){
+  extend2();
+  delay(231);
+  retract2();
+  delay(231);
+}
+
+void punchright(){
+  extend1();
+  delay(231);
+  retract1();
+  delay(231);
+}
+
+void loop() {
+  //extend();
+
+  //retract();
+
   if (Serial.available() > 0) {
     int arm = Serial.read();
     if (arm=='a') {
-      extend();
+      punchright();
     }
     if (arm=='b') {
-      retract();
+      punchleft();
     }
-
   }
 }
 
@@ -41,5 +73,3 @@ void loop() {
  delay(5);
  myservo.write(37);
  delay(5);*/
-
-
