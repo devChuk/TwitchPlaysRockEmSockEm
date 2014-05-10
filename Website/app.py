@@ -5,7 +5,8 @@ app.secret_key = 'rockemsockem'
 @app.route('/')
 def main():
     if 'username' in session:
-        return render_template('main.html')
+        name = session['username']
+        return render_template('main.html', name=name)
     else:
         return redirect(url_for('login'))
 
