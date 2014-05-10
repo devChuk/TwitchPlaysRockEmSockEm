@@ -9,6 +9,14 @@ def main():
     else:
         return redirect(url_for('login'))
 
+@app.route('/red')
+def red():
+    return render_template('red.html')
+
+@app.route('/blue')
+def blue():
+    return render_template('blue.html')
+
 @app.route('/about')
 def about():
     return render_template('about.html')
