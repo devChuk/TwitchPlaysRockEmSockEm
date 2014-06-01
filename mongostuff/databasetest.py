@@ -4,7 +4,6 @@ from pymongo import MongoClient
 
 client = MongoClient()
 db = client['test-database']
-collection = db.test_collection
 #The thing is that MongoDB does not like documents which grow, like chat pages. 
 #MongoDB always stores documents in a contiguous section in the database files. This makes reading much simpler and faster, 
 #because no seeking on the hard-drive needs to be done to read a single document.
@@ -20,4 +19,11 @@ collection = db.test_collection
 #programming the reading code will be easier.
 
 #There will be two documents. Each document is for each robot.
+#For now, just making one document.
+chat = {"text": "blah"}
 
+chats = db.chats
+chat_id = chats.insert(chat)
+str(chat_id)
+
+db.collection_names()
