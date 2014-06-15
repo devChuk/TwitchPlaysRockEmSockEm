@@ -1,7 +1,7 @@
 import serial
 
 #have a variable object set as the setup function for proper implementaion, ex. serport=setup('/dev/ttyACM0')
-def setup():
+def setup(portnum):
   s=serial.Serial(portnum)
   s.baudrate=9600
   s.port=portnum
@@ -10,12 +10,12 @@ def setup():
 
 def punch_1(ser,arm):
   if arm=='left':
-    ser.write(1)
+    ser.write('b')
   if arm=='right':
-    ser.write(2)
+    ser.write('a')
   
 def punch_2(ser,arm):
   if arm=='left':
-    ser.write(3)
+    ser.write('d')
   if arm=='right':
-    ser.write(4)
+    ser.write('c')
