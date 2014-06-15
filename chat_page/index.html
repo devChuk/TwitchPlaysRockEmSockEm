@@ -2,52 +2,70 @@
 <html>
   
   <head>
-    <script src="https://apps.imoapi.com/imo.im/api/2/imoapi-min.js"></script>
-    <script src="chat_example.js"></script>
-    <script src ="../static/js/foundation.min.js"></script>
+  <!-- <script src="https://apps.imoapi.com/imo.im/api/2/imoapi-min.js"></script>
+    <script src="chat_example.js"></script>-->
+    <script src="../static/js/foundation.min.js"></script>
+    <link rel="stylesheet" href="../static/css/foundation.min.css"></script>
     <link rel="stylesheet" href="../static/reveal.css">
-    <script src ="../static/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../static/jquery-1.4.4.min.js" type="text/javascript"></script>
     <script src="../static/jquery.reveal.js" type="text/javascript"></script>
-    
+    <script src="../static/js/vendor/jquery.js"></script>
+$(document).ready(function(){$('#myModal').foundation('reveal', 'open')});
+
+
     <style type="text/css">
       body { font-family: "HelveticaNeue","Helvetica-Neue", "Helvetica", "Arial", sans-serif; }
       .big-link { display:block; margin-top: 100px; text-align: center; font-size: 70px; color: #06f; }
     </style>
   </head>
   <body>
-    <h1>Sorry. Ongoing Maintenance</h1>
-    <h2>Please try again later.</h2>
-    
-    
-    <a href="#" data-reveal-id="myModal" data-animation="fadeAndPop" data-animationspeed="500" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal">Click Me For An Id</a>
-    
-    <div id="myModal" class="reveal-modal" data-reveal>
-      <h2>Welcome to RockEmSockEm.</h2>
-      <p class="lead">This is your temporary ID number: 1234 </p>
-      <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-      <p> Click elsewhere to enter the chat. </p>
-      <a class="close-reveal-modal">&#215;</a>
-    </div> 
-    
-    <script>
-      $(document).foundation();
-    </script>
-    
-    <center>
-     
-      <textarea id="chat_box" readonly="readonly"
-                style="width: 290px; height: 250px;
-                       margin: 2px; resize: none"></textarea>
-      
-      <form id="message_form">
-	<input type=text id="message_input"
-               style="width: 220px; height: 18px; margin: 2px" >
-	<input type="submit" id="send_button" value="Send"
-               style="width: 60px; margin: 2px" >
-      </form>
+    <div class="fixed">
+      <nav class="top-bar" data-topbar>
+	<ul class="title-area">
+	  <li class="name">
+	    <h1><a href="#">Rock Em Sock Em</a></h1>
+	  </li>
+	</ul>  
+      </nav>
+    </div>
 
-    </center>
+    <div>
+ 
+<p>
+<p>
+      
+      <a href="#" data-reveal-id="myModal" data-animation="fadeAndPop" data-animationspeed="500" data-closeonbackgroundclick="true" data-dismissmodalclass="close-reveal-modal">Click Me For An Id</a>
+      
+      <div id="myModal" class="reveal-modal" data-reveal>
+	<h2>Welcome to RockEmSockEm.</h2>
+	<p class="lead">This is your temporary ID number: 1234 </p>
+	<p> Click elsewhere to enter the chat. </p>
+	<a class="close-reveal-modal">&#215;</a>
+      </div> 
+    </div>
     
+      <script>
+	$(document).foundation();
+      </script>
+    <p>
+    <p>
+      <div>
+	<center>
+	  
+	  <textarea id="chat_box" readonly="readonly"
+                    style="width: 290px; height: 250px;
+			   margin: 2px; resize: none">
+	  </textarea>
+	  
+	  <form id="message_form">
+	    <input type=text id="message_input"
+		   style="width: 220px; height: 18px; margin: 2px" >
+	    <input type="submit" id="send_button" value="Send"
+               style="width: 60px; margin: 2px" >
+	  </form>
+	  
+	</center>
+      </div>
   </body>
   
   
