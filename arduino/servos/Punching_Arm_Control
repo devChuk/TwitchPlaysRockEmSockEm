@@ -1,7 +1,9 @@
 #include <Servo.h>
 
-Servo myservo1;
-Servo myservo2;// create servo object to control a servo
+Servo grayR;
+Servo grayL;
+Servo redR;
+Servo redL;// create servo object to control a servo
 // a maximum of eight servo objects can be created
 
 int pos = 0; // variable to store the servo position
@@ -11,47 +13,80 @@ int delayTime=5;
 void setup()
 {
   Serial.begin(9600);
-  myservo1.attach(9); // attaches the servo on pin 9 to the servo object
-  myservo1.write(5);
-  myservo2.attach(10);
-  myservo2.write(82);
-  
+  grayR.attach(9); // attaches the servo on pin 9 to the servo object
+  grayR.write(7);
+  grayL.attach(10);
+  grayL.write(82);
+  redR.attach(7);
+  redR.write(10);
+  redL.attach(8);
+  redL.write(82);
 }
 
-void extend1(){
-  myservo1.write(50);
+//Gray Right Hand
+void extendGR(){
+  grayR.write(55);
   delay(delayTime);
 }
-
-void retract1(){
-  myservo1.write(5);
+void retractGR(){
+  grayR.write(7);
   delay(delayTime);
 }
-
-void extend2(){
-  myservo2.write(49);
-  delay(delayTime);
-}
-
-void retract2(){
-  myservo2.write(82);
-  delay(delayTime);
-  
-}
-
-void punchleft(){
-  extend2();
+void punchGR(){
+  extendGR();
   delay(231);
-  retract2();
+  retractGR();
   delay(231);
 }
 
-void punchright(){
-  extend1();
+//Gray Left Hand
+void extendGL(){
+  grayL.write(49);
+  delay(delayTime);
+}
+void retractGL(){
+  grayL.write(82);
+  delay(delayTime);
+}
+void punchGL(){
+  extendGL();
   delay(231);
-  retract1();
+  retractGL();
   delay(231);
 }
+
+//Red Right Hand
+void extendRR(){
+  redR.write(50);
+  delay(delayTime);
+}
+void retractRR(){
+  redR.write(10);
+  delay(delayTime);
+}
+void punchRR(){
+  extendRR();
+  delay(231);
+  retractRR();
+  delay(231);
+}
+
+//Red Left Hand
+void extendRL(){
+  redL.write(49);
+  delay(delayTime);
+}
+void retractRL(){
+  redL.write(82);
+  delay(delayTime);
+}
+void punchRL(){
+  extendRL();
+  delay(231);
+  retractRL();
+  delay(231);
+}
+
 
 void loop() {
   //extend();
@@ -61,15 +96,16 @@ void loop() {
   if (Serial.available() > 0) {
     int arm = Serial.read();
     if (arm=='a') {
-      punchright();
+      punchGR();
     }
     if (arm=='b') {
-      punchleft();
+      punchGL();
+    }
+    if (arm=='c') {
+      punchRR();
+    }
+    if (arm=='d') {
+      punchRL();
     }
   }
 }
-
-/*myservo.write(0);
- delay(5);
- myservo.write(37);
- delay(5);*/
