@@ -25,13 +25,13 @@ while True:
         for l in list_list_punches:
             list_punches.append(l)
         list_punches.sort()
-        curr_time=list_punches[0][0]
-        curr_punch=list_punch[0][1].encode('ascii')
-        for l in list_punches[1:]:
-            if prev_time<l[0]<curr_time:
-                curr_time=l[0]
+        prevprev = prev_time
+        for l in list_punches:
+            if prev_time<l[0]:
+                prev_time=l[0]
                 curr_punch=l[1].encode('ascii')
-        a_c.punch(ser,curr_punch)
-        prev_time=curr_time
+                break
+        if prevprev!=prev_time:
+            a_c.punch(ser,curr_punch)
 
     
