@@ -4,7 +4,6 @@ import pymongo
 app = Flask(__name__)
 
 @app.route("/api",methods=['GET'])
-def @app.route("/")
 def api():
     if request.method == 'GET':
         json_results=[]
