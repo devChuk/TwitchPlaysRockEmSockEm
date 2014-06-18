@@ -8,14 +8,5 @@ def setup(portnum):
   s.open()
   return s
 
-def punch_1(ser,arm):
-  if arm=='left':
-    ser.write('b')
-  if arm=='right':
-    ser.write('a')
-  
-def punch_2(ser,arm):
-  if arm=='left':
-    ser.write('d')
-  if arm=='right':
-    ser.write('c')
+def punch(ser,punch_letter):
+  ser.write(punch_letter)

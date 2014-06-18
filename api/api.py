@@ -7,9 +7,10 @@ app = Flask(__name__)
 def api():
     if request.method == 'GET':
         json_results=[]
-        db_data=pymongo.MongoClient().twitchdb.twitchcollect.find_one({'twitch':'yes'})
+        #db_data=pymongo.MongoClient().twitchdb.twitchcollect.find_one({'twitch':'yes'})
         d={
-            'commands':db_data['commands']
+           # 'commands':db_data['commands']
+            'commands':[('a',1),('b',2),('c',3),('d',4)]
             }
         json_results.append(d)
         
