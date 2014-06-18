@@ -10,7 +10,7 @@ def api():
         #db_data=pymongo.MongoClient().twitchdb.twitchcollect.find_one({'twitch':'yes'})
         d={
            # 'commands':db_data['commands']
-            'commands':[('a',1),('b',2),('c',3),('d',4)]
+            'commands':[(1,'a'),(2,'b'),(3,'c'),(4,'d')]
             }
         json_results.append(d)
         
