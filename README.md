@@ -1,8 +1,7 @@
 TwitchPlaysRockEmSockEm
 =======================
 
-Please watch: https://drive.google.com/file/d/0B_RTwatU12PgUXo4dmFEM0hiV1k/edit?usp=sharing
-
+Please watch: http://youtu.be/Am3PTB_FvNs
 
 Members: Brian Chuk, Jason Han, Victoria Chung, Yaseen Islam
 
